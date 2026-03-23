@@ -1,0 +1,21 @@
+class NotificationCenter {
+  constructor(roomList) {
+    for (let room of roomList) {
+      room.addEvent("detection", this.sendEmail.bind(this));
+      room.addEvent("detection", this.writeLog.bind(this));
+      room.addEvent("detection", this.sendDiscord.bind(this));
+    }
+  }
+
+  sendEmail({ message, room }) {
+    console.log(`${room.name} - ${message}`);
+  }
+
+  writeLog({ message, room }) {
+    console.log(`${room.name} - ${message}`);
+  }
+
+  sendDiscord({ message, room }) {
+    console.log(`${room.name} - ${message}`);
+  }
+}
