@@ -4,10 +4,7 @@ class NotificationCenter {
   constructor(roomList, notifications) {
     for (let room of roomList) {
       for (let notif of notifications) {
-        room.addEvent(
-          "detection",
-          NotificationFactory.create(notif.type, notif.config),
-        );
+        room.addEvent(NotificationFactory.create(notif.type, notif.config));
       }
     }
   }

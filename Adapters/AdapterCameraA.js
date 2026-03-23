@@ -1,4 +1,4 @@
-import ISensor from "./ISensor.js";
+import ISensor from "../Sensors/ISensor.js";
 
 class AdapterCameraA extends ISensor {
   constructor(camera) {

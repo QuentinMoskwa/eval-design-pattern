@@ -1,8 +1,5 @@
-import ISensor from "./ISensor.js";
-
-class CameraA extends ISensor {
+class CameraA {
   constructor(location) {
-    super();
     this.location = location;
   }
   onDetect(callback) {

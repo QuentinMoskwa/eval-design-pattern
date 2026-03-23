@@ -1,4 +1,4 @@
-import ISensor from "./ISensor.js";
+import ISensor from "../Sensors/ISensor.js";
 
 class AdapterThermalSensorB extends ISensor {
   constructor(sensor) {

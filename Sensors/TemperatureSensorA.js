@@ -1,8 +1,5 @@
-import ISensor from "./ISensor.js";
-
-class TemperatureSensorA extends ISensor {
+class TemperatureSensorA {
   constructor(location, threshold) {
-    super();
     this.location = location;
     this.threshold = threshold;
   }

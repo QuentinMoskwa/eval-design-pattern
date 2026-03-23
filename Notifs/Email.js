@@ -3,7 +3,7 @@ class Email {
     this.address = config.address;
   }
   notify({ message, room }) {
-    console.log(`email = ${this.address} ${room.name} ${message}`);
+    console.log(`EMAIL at ${this.address} = ${room.name} | ${message}`);
   }
 }
 

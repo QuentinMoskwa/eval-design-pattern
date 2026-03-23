@@ -8,7 +8,9 @@ class ThermalSensorB {
       detection: "thermal",
       date: new Date(),
     };
-    const message = `[ThermalSensorB] nom: "${data.sensor}", type: ${data.detection}, date: ${data.date}`;
+    const message = `ThermalSensorB "${data.sensor}" - type: ${data.detection}, date: ${data.date}`;
     process(message);
   }
 }
+
+export default ThermalSensorB;

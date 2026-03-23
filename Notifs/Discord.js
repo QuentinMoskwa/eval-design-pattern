@@ -3,7 +3,7 @@ class Discord {
     this.server = config.server;
   }
   notify({ message, room }) {
-    console.log(`Discord = ${this.server} [${room.name}] ${message}`);
+    console.log(`DISCORD ${this.server} = ${room.name} | ${message}`);
   }
 }
 

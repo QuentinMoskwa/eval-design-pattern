@@ -3,7 +3,7 @@ class Log {
     this.filename = config.filename;
   }
   notify({ message, room }) {
-    console.log(`Log = ${this.filename} ${room.name} ${message}`);
+    console.log(`LOG ${this.filename} = ${room.name} | ${message}`);
   }
 }
 
