@@ -1,21 +1,12 @@
 class NotificationCenter {
-  constructor(roomList) {
+  constructor(roomList, notifications) {
     for (let room of roomList) {
-      room.addEvent("detection", this.sendEmail.bind(this));
-      room.addEvent("detection", this.writeLog.bind(this));
-      room.addEvent("detection", this.sendDiscord.bind(this));
+      for (let notif of notifications) {
+        room.addEvent(
+          "detection",
+          NotificationFactory.create(notif.type, notif.config),
+        );
+      }
     }
-  }
-
-  sendEmail({ message, room }) {
-    console.log(`${room.name} - ${message}`);
-  }
-
-  writeLog({ message, room }) {
-    console.log(`${room.name} - ${message}`);
-  }
-
-  sendDiscord({ message, room }) {
-    console.log(`${room.name} - ${message}`);
   }
 }
