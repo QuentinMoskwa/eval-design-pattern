@@ -1,5 +1,12 @@
-TemperatureSensorA
-class TemperatureSensorA {
- constructor(location, threshold) {} // location = nom de la pièce, threshold = température de déclenchement
- onDetect(callback) {} // Déclenche un message d’alerte (string)
+class TemperatureSensorA extends ISensor {
+  constructor(location, threshold) {
+    super();
+    this.location = location;
+    this.threshold = threshold;
+  }
+  onDetect(callback) {
+    callback(
+      `[TemperatureSensorA] Température dépasse ${this.threshold} deg dans "${this.location}"`,
+    );
+  }
 }

@@ -1,4 +1,14 @@
 class ThermalSensorB {
- constructor(position) {} // position = id de la pièce
- triggerHeatSignature(process) {} // Déclenche une donnée complexe json, voir ci dessous
+  constructor(position) {
+    this.position = position;
+  }
+  triggerHeatSignature(process) {
+    const data = {
+      sensor: `ThermalSensorB${this.position}`,
+      detection: "thermal",
+      date: new Date(),
+    };
+    const message = `[ThermalSensorB] nom: "${data.sensor}", type: ${data.detection}, date: ${data.date}`;
+    process(message);
+  }
 }
