@@ -1,24 +1,19 @@
-import Email from "./Email.js";
-import Log from "./Log.js";
-import Discord from "./Discord.js";
-
 class NotificationFactory {
   static create(type, config) {
+    let instance;
     switch (type) {
       case "email":
-        return new Email(config).notify.bind(
-          new Email(config),
-        );
+        instance = new EmailNotification(config);
+        break;
       case "log":
-        return new Log(config).notify.bind(
-          new Log(config),
-        );
+        instance = new LogNotification(config);
+        break;
       case "discord":
-        return new Discord(config).notify.bind(
-          new Discord(config),
-        );
+        instance = new DiscordNotification(config);
+        break;
       default:
         throw new Error(`Type inconnu : ${type}`);
     }
+    return (context) => instance.notify(context);
   }
 }
