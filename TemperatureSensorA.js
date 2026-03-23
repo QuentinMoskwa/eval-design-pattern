@@ -1,3 +1,5 @@
+import ISensor from "./ISensor.js";
+
 class TemperatureSensorA extends ISensor {
   constructor(location, threshold) {
     super();
@@ -6,7 +8,9 @@ class TemperatureSensorA extends ISensor {
   }
   onDetect(callback) {
     callback(
-      `[TemperatureSensorA] Température dépasse ${this.threshold} deg dans "${this.location}"`,
+      `TemperatureSensor A - Température dépasse ${this.threshold} deg dans "${this.location}"`,
     );
   }
 }
+
+export default TemperatureSensorA;

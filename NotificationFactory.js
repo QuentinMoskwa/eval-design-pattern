@@ -1,15 +1,19 @@
+import Email from "./Email.js";
+import Log from "./Log.js";
+import Discord from "./Discord.js";
+
 class NotificationFactory {
   static create(type, config) {
     let instance;
     switch (type) {
       case "email":
-        instance = new EmailNotification(config);
+        instance = new Email(config);
         break;
       case "log":
-        instance = new LogNotification(config);
+        instance = new Log(config);
         break;
       case "discord":
-        instance = new DiscordNotification(config);
+        instance = new Discord(config);
         break;
       default:
         throw new Error(`Type inconnu : ${type}`);
@@ -17,3 +21,5 @@ class NotificationFactory {
     return (context) => instance.notify(context);
   }
 }
+
+export default NotificationFactory;

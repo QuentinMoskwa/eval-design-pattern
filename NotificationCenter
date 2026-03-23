@@ -1,3 +1,5 @@
+import NotificationFactory from "./NotificationFactory.js";
+
 class NotificationCenter {
   constructor(roomList, notifications) {
     for (let room of roomList) {
@@ -10,3 +12,5 @@ class NotificationCenter {
     }
   }
 }
+
+export default NotificationCenter;

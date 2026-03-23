@@ -1,3 +1,5 @@
+import ISensor from "./ISensor.js";
+
 class AdapterCameraA extends ISensor {
   constructor(camera) {
     super();
@@ -7,3 +9,5 @@ class AdapterCameraA extends ISensor {
     this.adapter.onDetect(callback);
   }
 }
+
+export default AdapterCameraA;

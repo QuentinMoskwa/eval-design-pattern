@@ -1,9 +1,13 @@
-class AdapterTemperatureSensorA extends ISensor {
-  constructor(sensor) {
+import ISensor from "./ISensor.js";
+
+class AdapterCameraA extends ISensor {
+  constructor(camera) {
     super();
-    this.adapter = sensor;
+    this.adapter = camera;
   }
   onDetect(callback) {
     this.adapter.onDetect(callback);
   }
 }
+
+export default AdapterCameraA;

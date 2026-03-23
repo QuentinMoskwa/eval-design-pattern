@@ -1,3 +1,5 @@
+import ISensor from "./ISensor.js";
+
 class AdapterThermalSensorB extends ISensor {
   constructor(sensor) {
     super();
@@ -7,3 +9,5 @@ class AdapterThermalSensorB extends ISensor {
     this.adapter.triggerHeatSignature(callback);
   }
 }
+
+export default AdapterThermalSensorB;
